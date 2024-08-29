@@ -1,10 +1,12 @@
+'use client'
 import { Button } from "react-bootstrap";
 import Cabecalho from "./components/Cabecalho";
 import Link from "next/link";
+import Pagina from "./components/Pagina";
 
 export default function Home() {
   return (
-    <main>
+    <Pagina titulo="Página Inicial">
       <Button variant="primary">Primary</Button>{' '}
 
       <Cabecalho titulo="Orion" subtitulo="Agora" />
@@ -14,6 +16,6 @@ export default function Home() {
 
       <Link href="/fundamentos">Página Fundamentos</Link><br />
 
-    </main>
+    </Pagina>
   );
 }

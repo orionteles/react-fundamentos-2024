@@ -1,10 +1,12 @@
+'use client'
 import { Table } from "react-bootstrap";
 import Cabecalho from "../components/Cabecalho";
 import Link from "next/link";
+import Pagina from "../components/Pagina";
 
 export default function Clientes() {
     return (
-        <>
+        <Pagina titulo="Clientes">
             <Cabecalho titulo="Clientes" subtitulo="Página de clientes usando o cabeçalho" />
 
             <Link href="/">Página Inicial</Link><br />
@@ -40,6 +42,6 @@ export default function Clientes() {
                 </tbody>
             </Table>
 
-        </>
+        </Pagina>
     )
 }
