@@ -1,32 +1,30 @@
 'use client'
 
 import Pagina from "@/app/components/Pagina";
+import { useEffect, useState } from "react";
 import apiDisney from "@/app/services/apiDisney";
-import { useState } from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col, Row } from "react-bootstrap";
 
 export default function Page() {
 
     const [personagens, setPersonagens] = useState([])
 
-    apiDisney.get('/character').then(resultado => {
-        setPersonagens(resultado.data.data);
-    })
+    useEffect(() => {
+        apiDisney.get('character').then(resultado => {
+            setPersonagens(resultado.data.data)
+        })
+    }, [])
 
     return (
-        <Pagina titulo="Disney">
+        <Pagina titulo="Disney Cards">
 
-            <Row md={3}>
+            <Row md={4}>
                 {personagens.map(item => (
-                    <Col key={item._id} >
+                    <Col key={item._id} className="mt-3">
                         <Card>
-                            <Card.Img style={{ height: 250 }} variant="top" src={item.imageUrl} />
+                            <Card.Img height={150} variant="top" src={item.imageUrl} />
                             <Card.Body>
                                 <Card.Title>{item.name}</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
-                                </Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>

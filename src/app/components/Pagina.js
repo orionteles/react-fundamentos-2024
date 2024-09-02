@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 
 export default function Pagina(props) {
     return (
@@ -14,6 +14,23 @@ export default function Pagina(props) {
                         <Nav.Link href="/nomes">Nomes</Nav.Link>
                         <Nav.Link href="/numeros">Números</Nav.Link>
                         <Nav.Link href="/disney">Disney</Nav.Link>
+                        <NavDropdown title="Disney" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="/disney">
+                               Parágrafo
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="/disney/cards">
+                               Cards
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="/disney/tabela">
+                                Tabela
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="/disney/carrossel">
+                                Carrossel
+                            </NavDropdown.Item>
+                        </NavDropdown>
                     </Nav>
                 </Container>
             </Navbar>

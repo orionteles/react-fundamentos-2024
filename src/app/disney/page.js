@@ -16,7 +16,9 @@ export default function Page(){
     return (
         <Pagina titulo="Disney">
             {personagens.map(item => (
-                <p>{item.name}</p>
+                <p key={item._id}>
+                    {item.name}
+                </p>
             ))}
 
         </Pagina>
